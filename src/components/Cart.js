@@ -29,6 +29,7 @@ export default function Cart({cartItems,handleAdd, handleReduce,handleDelete}) {
                   <p style={{fontWeight:"bold", fontSize:"large"}}>{product.name}</p>
                   <p style={{fontWeight:"500",fontSize:"medium"}}>₹{product.price}</p>
                 </div>
+                <div className="cart-btns">
                 <button className='count-btn'
                 onClick={(e)=>handleReduce(product)}>-</button>
                 <div className='cart-num'>{product.cartQuantity}</div>
@@ -37,6 +38,7 @@ export default function Cart({cartItems,handleAdd, handleReduce,handleDelete}) {
                 <i class="fa-solid fa-trash"
                 onClick={(e)=>handleDelete(product)}
                 style={{fontSize:"300", color:"darkred"}}></i>
+                </div>
               </div>  
             ))}
             </div>
