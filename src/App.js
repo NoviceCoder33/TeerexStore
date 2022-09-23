@@ -16,7 +16,10 @@ function App() {
   // console.log(productExists);
   if(Product.quantity!==0){
     if(productExists){
-      alert("Product already exists in the cart,Please check shopping cart!")
+      setCartItems(
+        cartItems.map((item)=>item.id === Product.id?{
+          ...productExists, cartQuantity: productExists.cartQuantity+1 }:item)
+      );
     }else{
       setCartItems([...cartItems,{...Product, cartQuantity:1}]);
     }
