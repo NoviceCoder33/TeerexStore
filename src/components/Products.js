@@ -57,13 +57,13 @@ const performAPICall=async()=>{
             onChange={(e)=>setSearchInput(e.target.value)}/>
             <button className="search-btn"
             onClick={(e)=>handleSearch(filterProducts,searchParam,searchInput)}>
-            <i class="fa fa-search" style={{fontSize:"20px",color:"white"}}></i>
+            <i className="fa fa-search" style={{fontSize:"20px",color:"white"}}></i>
             </button>
           
            <div className="filter-toggle">     
           <button className="filter-btn" 
            onClick={handleToggleList}>
-          <i class="fa fa-filter" style={{fontSize:"20px",color:"white"}}></i>
+          <i className="fa fa-filter" style={{fontSize:"20px",color:"white"}}></i>
           </button>
           <Filter
            productList={productList}

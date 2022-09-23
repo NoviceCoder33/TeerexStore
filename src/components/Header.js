@@ -22,10 +22,10 @@ const cartNumber=cartCount(cartItems);
              Shopping Cart
              </h3>
             ):( 
-                <span class="fa-stack fa-1x has-badge" 
+                <span className="fa-stack fa-1x has-badge" 
                  data-count={cartNumber}
                  >
-                    <i class="fa-solid fa-cart-shopping"
+                    <i className="fa-solid fa-cart-shopping"
                     style={{fontSize:"30px",color:"white"}}>      
                     </i>
                 </span>

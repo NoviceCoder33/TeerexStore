@@ -36,7 +36,7 @@ export default function Cart({cartItems,cartCount,handleAdd,handleReduce,handleD
                 <div className='cart-num'>{product.cartQuantity}</div>
                 <button className='count-btn'
                 onClick={(e)=>handleAdd(product)}>+</button>
-                <i class="fa-solid fa-trash"
+                <i className="fa-solid fa-trash"
                 onClick={(e)=>handleDelete(product)}
                 style={{fontSize:"300", color:"darkred"}}></i>
                 </div>

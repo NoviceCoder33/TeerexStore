@@ -123,7 +123,7 @@ useEffect(()=>{
 if(toggle){
 return(
  <div className={`toggle ${isOpen=== true?"active":""}`}>
-  <i class="fa fa-times" aria-hidden="true"
+  <i className="fa fa-times" aria-hidden="true"
   style={{display:"flex",flexDirection:"row-reverse",color:"#FF9F1C"}}
   onClick={ToggleBar}>
   </i>
