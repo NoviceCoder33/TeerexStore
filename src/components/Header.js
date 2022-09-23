@@ -2,7 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import "./Header.css";
 
-export default function Header({cartItems,open}) {
+export default function Header({cartItems,cartCount,open}) {
+const cartNumber=cartCount(cartItems);
+
   return (
     <div className='header'>
         <Link style={{textDecoration:"none"}} to="/">
@@ -21,7 +23,7 @@ export default function Header({cartItems,open}) {
              </h3>
             ):( 
                 <span class="fa-stack fa-1x has-badge" 
-                 data-count={cartItems.length}
+                 data-count={cartNumber}
                  >
                     <i class="fa-solid fa-cart-shopping"
                     style={{fontSize:"30px",color:"white"}}>      

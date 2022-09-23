@@ -53,12 +53,24 @@ const handleDelete = (Product) => {
   setCartItems(cartItems.filter((item) => item.id !== Product.id));
 };
 
+const cartCount=(cartItems)=>{
+  if (!cartItems.length) return 0;
+
+  const total= cartItems
+    .map((item) => item.cartQuantity)
+    .reduce((sum, num) => sum + num);
+
+  return total;
+
+};
+
   return (
     <>
     <div className='App'>
      <Routes>
          <Route exact path="/" element={<Products
           cartItems={cartItems}
+          cartCount={cartCount}
           handleAddtoCart={handleAddtoCart}
          />}/>
          <Route exact path="/Cart" element={<Cart
@@ -66,6 +78,7 @@ const handleDelete = (Product) => {
          handleAdd={handleAdd}
          handleReduce={handleReduce}
          handleDelete={handleDelete}
+         cartCount={cartCount}
          />}/> 
      </Routes>
    </div>

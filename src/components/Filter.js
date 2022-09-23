@@ -82,7 +82,7 @@ const updateFilteredProductsList=(filterList)=>{
             (color.length===0 ||color.includes(product.color) )&&
             (gender.length===0 || gender.includes(product.gender) )&&
             (type.length===0 || type.includes(product.type) )&&
-            (price.length===0 || priceRange(product.price,price).icludes(true) )
+            (price.length===0 || priceRange(product.price,price).includes(true) )
             );
         });
     }

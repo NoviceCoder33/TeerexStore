@@ -6,7 +6,7 @@ import ProductCard from "./ProductCard";
 import Filter from "./Filter";
 import { config } from "../App"; 
 
-export default function Products( {cartItems,handleAddtoCart}) {
+export default function Products( { cartItems,cartCount,handleAddtoCart}) {
  const [productList, setProductList]= useState([]);
  const [filterProducts,setFilterProducts]=useState([]);
  const [searchInput,setSearchInput]= useState("");
@@ -36,7 +36,7 @@ const performAPICall=async()=>{
 }
  }
 
- const ToggleList = () => {
+ const handleToggleList = () => {
     isOpen === true ? setIsopen(false) : setIsopen(true);
   };
 
@@ -51,7 +51,7 @@ const performAPICall=async()=>{
 
     return (
         <div className="product-container">
-        <Header   cartItems={cartItems} />
+        <Header cartItems={cartItems} cartCount={cartCount}/>
         <div className="searchbar">
             <input type="text" placeholder="Search Products..." className="search-input"
             onChange={(e)=>setSearchInput(e.target.value)}/>
@@ -62,7 +62,7 @@ const performAPICall=async()=>{
           
            <div className="filter-toggle">     
           <button className="filter-btn" 
-           onClick={ToggleList}>
+           onClick={handleToggleList}>
           <i class="fa fa-filter" style={{fontSize:"20px",color:"white"}}></i>
           </button>
           <Filter
@@ -72,7 +72,7 @@ const performAPICall=async()=>{
            searchInput={searchInput}
            isOpen={isOpen}
            toggle
-           ToggleBar={ToggleList}
+           ToggleBar={handleToggleList}
            />
           </div>  
         </div>

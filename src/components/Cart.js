@@ -2,19 +2,20 @@ import React from 'react';
 import Header from './Header';
 import "./Cart.css";
 
-export default function Cart({cartItems,handleAdd, handleReduce,handleDelete}) {
+export default function Cart({cartItems,cartCount,handleAdd,handleReduce,handleDelete}) {
   const getTotalAmount=(cartItems)=>{
   if(!cartItems.length) return 0;
+
   const total = cartItems
-              .map((item)=>item.price * item.cartQuantity)
-              .reduce((sum,n)=> sum+n);
+  .map((item)=>item.price * item.cartQuantity)
+  .reduce((sum,n)=> sum+n);
          return total;     
   };
   const totalPrice= getTotalAmount(cartItems);
 
   return (
     <div className='cart'>
-        <Header cartItems={cartItems} open/>
+        <Header  cartItems={cartItems} cartCount={cartCount} open/>
         <div className="cart-container">
         <h4 className='cart-heading'>Shopping Cart</h4>
           {cartItems.length?(
