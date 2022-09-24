@@ -21,7 +21,7 @@ export default function ProductCard({filterProducts,handleAddtoCart}) {
           </div>
         </div>))):(
           <h3 style={{color:'lightgray' ,fontWeight:"400",justifyContent:"center"}}>
-           Opps! No Products Found <i class="fa-solid fa-face-frown-slight"></i>
+           Opps! No Products Found <i className="fa-solid fa-face-frown-slight"></i>
           </h3>
         )}
 

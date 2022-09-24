@@ -16,10 +16,14 @@ function App() {
   // console.log(productExists);
   if(Product.quantity!==0){
     if(productExists){
-      setCartItems(
-        cartItems.map((item)=>item.id === Product.id?{
-          ...productExists, cartQuantity: productExists.cartQuantity+1 }:item)
-      );
+      if(productExists && productExists.cartQuantity <= Product.quantity){
+        setCartItems(
+          cartItems.map((item)=>item.id === Product.id?{
+            ...productExists, cartQuantity: productExists.cartQuantity+1 }:item)
+        );
+        }else{
+          alert("Sorry,Product quantity limit reached,you can't add more of this product!")
+        }
     }else{
       setCartItems([...cartItems,{...Product, cartQuantity:1}]);
     }

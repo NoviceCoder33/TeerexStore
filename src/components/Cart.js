@@ -51,7 +51,7 @@ export default function Cart({cartItems,cartCount,handleAdd,handleReduce,handleD
   
           ):(
             <div className="no-product">
-              No Products are added to Cart,Please add Products and try again! <i class="fa-solid fa-face-smile"></i>
+              No Products are added to Cart,Please add Products and try again! <i className="fa-solid fa-face-smile"></i>
             </div>
           )
           }
